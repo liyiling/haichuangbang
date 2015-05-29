@@ -1,0 +1,66 @@
+<template name="trending">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="newProduct">
+      {{> ionIcon icon='ios-plus-empty'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">首页</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each shares}}
+                <div class="list card">
+                    <div class="item item-avatar">
+                        <img src="images/favicon-160x160.jpg">
+                        <h2>Marty McFly</h2>
+                        <p>{{createdAt}}</p>
+                    </div>
+
+                    <div class="item item-body">
+                        {{#each fileIds}}
+                        <!-- <h2>Marty McFly</h2> -->
+                        <img class="small-image" src="/cfs/files/uploads/{{this}}?store=thumbs">
+                        <!-- <img src="{{this.url store='thumbs' uploading='/images/uploading.gif' storing='images/storing.gif'}}" alt="" class="thumbsnail"/> -->
+                        {{/each}}
+                        <p>
+                            {{txt}}
+                        </p>
+                        <p>
+                            <a href="#" class="subdued">1 赞</a>
+                            <a href="#" class="subdued">5 条评论</a>
+                        </p>
+                    </div>
+
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-thumbsup"></i>
+                            赞
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-chatbox"></i>
+                            评论
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-share"></i>
+                            分享
+                        </a>
+                    </div>
+
+                </div>
+            {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

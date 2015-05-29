@@ -1,0 +1,14 @@
+<template name="notifications">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">会议室预定</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="empty-view">
+        {{> ionIcon icon="ios-bell"}}
+        No notifications yet!
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

@@ -1,0 +1,72 @@
+<template name="productsShow">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="share-product" data-product-id="{{product._id}}">
+      {{> ionIcon icon='ios-upload-outline'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">商品详情</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <div class="product-detail">
+
+        {{#with product}}
+
+          {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
+            <!-- _voteButton.html -->
+            {{> _voteButton}}
+            <h2 class="product-title">
+              <a href="{{url}}" target="_blank" class="positive">{{name}}</a>
+            </h2>
+            <p>
+              {{tagline}}
+            </p>
+            {{#with author}}
+              <p>
+                <small>via <a href="{{pathFor 'users.show'}}" class="dark">{{profile.name}}</a></small>
+              </p>
+            {{/with}}
+            <span class="date-posted">
+              {{datePosted}}
+            </span>
+          {{/ionItem}}
+
+          <div class="padding product-detail-upvotes">
+            <h5>Upvotes <small>{{numberOfVotes}}</small></h5>
+            {{#each voters}}
+              <a href="{{pathFor 'users.show'}}">
+                {{> avatar user=this size="small" shape="circle"}}
+              </a>
+            {{/each}}
+          </div>
+        {{/with}}
+
+        <div class="padding product-detail-comments">
+          <h5>Comments</h5>
+          {{#with product}}
+            <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
+              {{>ionIcon icon="plus"}}
+            </button>
+          {{/with}}
+        </div>
+
+        <div class="list">
+          {{#each comments}}
+            {{> _comment}}
+          {{/each}}
+        </div>
+
+      </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

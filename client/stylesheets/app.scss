@@ -1,0 +1,240 @@
+// Custom
+@import 'app-mixins';
+@import 'app-variables';
+
+// Ionic
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+.product-title a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button-circle {
+  border-radius: 100%;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.bar .title {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.empty-view {
+  color: #ccc;
+  text-align: center;
+  padding-top: 160px;
+
+  i {
+    display: block;
+    margin: 0 auto 12px auto;
+    font-size: 60px;
+  }
+}
+
+.button.vote-button {
+  width: 30px;
+  max-width: 30px;
+  min-width: 30px;
+  padding: 20px 0 0 0;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 12px;
+  border: 0;
+  border-radius: $border-radius-base;
+  line-height: 20px;
+
+  &.has-voted {
+    .icon {
+      color: $positive;
+    }
+  }
+
+  .icon {
+    height: 20px;
+    top: 4px;
+
+    &:before {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+}
+
+.comments-count {
+  font-size: 12px;
+  width: 36px;
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  right: 16px;
+  color: #999999;
+
+  .icon {
+    font-size: 16px;
+    font-size: 16px;
+    position: static;
+    display: inline;
+    color: #cccccc;
+
+    &:before {
+      display: inline;
+    }
+  }
+}
+
+.date-posted {
+  font-size: 12px;
+  width: 36px;
+  text-align: right;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #999999;
+}
+
+.product-detail {
+  h5 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+
+    small {
+      font-size: 11px;
+      font-weight: bold;
+      color: #666;
+    }
+  }
+}
+
+.product-detail-comments {
+  position: relative;
+
+  .button-new-comment {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.sign-in-modal {
+  p {
+    margin: 48px 0;
+  }
+}
+
+.sign-in-button img {
+  margin-top: 6px;
+}
+
+.profile-header {
+  background: #27272B url("/images/nodes.png") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 24px;
+
+  .avatar {
+    margin: 0 auto;
+  }
+
+  h3, p {
+    color: #fff;
+    margin-bottom: 0;
+  }
+
+  a {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    text-decoration: none;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}
+
+.avatar {
+  .avatar-image {
+    border: 2px solid #fff;
+  }
+
+  .avatar-initials {
+    border: 2px solid #fff;
+    background: $positive;
+    color: #fff;
+  }
+}
+
+.comment-item {
+  border-top: 0;
+  padding-left: 42px;
+  padding-top: 36px;
+}
+
+a.comment-item-author {
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 8px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: $dark;
+
+  .avatar {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  margin-right:30px;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
+}
+
+
+.preview-image{
+  width:100px;
+  height:100px;
+}
+
+  .tab-item {
+    font-family: "Roboto", sans-serif;
+  }
+
+.item-button-left, .item-button-right {
+  button {
+    top: 16px !important;
+  }
+}

@@ -1,0 +1,15 @@
+<template name="search">
+  {{#ionModal focusFirstInput=true title="Search"}}
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          {{> ionIcon icon="ios-search" class="placeholder-icon"}}
+          <input type="text" placeholder="Search" value="{{searchQuery}}">
+        </label>
+      </div>
+      {{#each products}}
+        {{> _productItem product=this path="products.show"}}
+      {{/each}}
+    </div>
+  {{/ionModal}}
+</template>
